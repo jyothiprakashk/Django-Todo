@@ -21,18 +21,7 @@ def index(request):
     
     
         if "taskDelete" in request.POST: 
-            #checkedlist = request.POST["checkedbox"] 
-            # for todo_id in checkedlist:
-            #     todo = TodoList.objects.get(id=str(todo_id)) 
-            #     todo = get_object_or_404(TodoList, id=todo_id)
-            #     try:
-            #        todo = get_object_or_404(TodoList, id=todo_id)
-            #        todo.delete() 
-            #     except TodoList.DoesNotExist:
-            #        todo = None
-            #def delete(request,id):
-            # check = request.POST["checkedbox"]
-            # for id in check:    
+             
                if request.method=='POST':
                     TodoList.objects.filter(id=id).delete()
                     return redirect('/')
