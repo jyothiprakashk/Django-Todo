@@ -1,0 +1,15 @@
+p{
+    color:green;
+}
+
+li{
+    color: yellow;
+
+}
+body{
+    background-color: cyan;
+}
+h1{
+    text-align: center;
+    display: flex;
+}
