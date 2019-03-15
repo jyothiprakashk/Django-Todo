@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect
-from . models import TodoList,Category
+# from . models import TodoList,Category
 import datetime
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
-
+from . models import Category
+from . models import TodoList
 
 
 def index(request): 
