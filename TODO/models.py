@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -21,6 +22,18 @@ class TodoList(models.Model):
         ordering = ["-created"]
 
     def __str__(self):
-        return self.title    
+        return self.title  
+
+
+
+
+class Contact(models.Model):
+ 
+
+  contact_date = models.DateTimeField(default=datetime.now, blank=True)
+  user_id = models.IntegerField(blank=True)
+  def __str__(self):
+    return self.name
+
 
      

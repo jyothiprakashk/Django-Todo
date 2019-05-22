@@ -6,5 +6,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     path('deleteall', views.deleteall, name='deleteall'),
     path('delete/<int:id>',views.delete,name='delete'),
+    path('todos_for_user',views.todos_for_user,name='todo')
+     
     
 ]

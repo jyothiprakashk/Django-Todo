@@ -1,14 +1,18 @@
+
+{% load static %}
+{% block content %}
+{% include 'base.html' %}
 <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>TodoApp - Django</title>
-  {% load static %}
-  <link rel="shortcut icon"  href= "{% static 'images/favicon.ico' type='image/x-icon' %}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title>TodoApp - Django</title> 
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Cookie|Rajdhani" rel="stylesheet">
-   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+ 
+
    <style>
        body{
            background-color: #34495e ;     
@@ -35,6 +39,7 @@
        .container{
           
            background-color: white;
+           margin-top:20px;
        }
        .container-1 {
 
@@ -228,7 +233,10 @@
         background: red;
     }
     #delete {
-        border-radius:15px;
+        
+        float: right;
+        
+       
     }
 
     
@@ -239,7 +247,7 @@
 </head>
 
 <body>
-<div django-app="TaskManager">        
+<div django-app="TaskManager">       
 	<div class="container">
             <div class="content">
             <h1 id="title">TodoApp</h1>
@@ -284,16 +292,24 @@
             <ul  class="taskList">
             {% for todo in todos %} 
                 <li class="taskItem">
-                    <input type="checkbox" class="taskCheckbox" name="checkedbox" id="{{ todo.id }}" value="{{ todo.id }}">
+              
+                    <input type="hidden" class="taskCheckbox" name="checkedbox" id="{{ todo.id }}" value="{{ todo.id }}">
                     <label for="{{ todo.id }}"><span class="complete-">{{ todo.title }}</span></label>
                     <span class="category-{{ todo.category }}">{{ todo.category }}</span>
-                    <strong class="taskDate"><i class="fa fa-calendar"></i>{{ todo.created }} - {{ todo.due_date }}</strong>
-                    <form action="/delete/{{ todo.id }}" method="POST">
+                    <form action="/accounts/delete/{{ todo.id }}" method="POST">
                         {% csrf_token %}
-                       <button class="btn btn-primary" id="delete"><i class="glyphicon glyphicon-trash"></i>Delete</button>
+                       <button class="btn btn-light" id="delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </form>    
+                    <strong class="taskDate"><i class="fa fa-calendar"></i>{{ todo.created }} - {{ todo.due_date }}</strong>
+                    
                 </li>
             {% endfor %}
+
+            {% for todoapp in todo %}
+                 {{ todoapp.id }}
+
+            {% endfor %}
+            
             
             
             </ul><!-- taskList -->
@@ -306,3 +322,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
+{% endblock %}
