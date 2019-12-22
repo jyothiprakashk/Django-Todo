@@ -1,0 +1,3 @@
+# Django-Todo
+Basic Django Todo app using categorys and database.
+when iam started it is very hard but now it is cool i think if any one interested in django to work hard....
