@@ -57,6 +57,7 @@ def login(request):
               auth.login(request,user)
               messages.success(request,'logged in')
               return redirect('dashboard')
+
     else:
         messages.error(request,'Invalid user') 
         return redirect('login')   
