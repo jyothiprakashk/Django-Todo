@@ -41,7 +41,7 @@ def delete(request,id):
         return redirect('index')
 
 
-def register(request):
+def signup(request):
   if request.method=='POST':
    #Get form values
    first_name = request.POST['first_name']
@@ -53,11 +53,11 @@ def register(request):
      # check username
         if User.objects.filter(username=username).exists():
             messages.error(request,'This username is already taken')
-            return redirect('register')
+            return redirect('signup')
         else:  
             if User.objects.filter(email=email).exists():
                messages.error(request,'This email is already taken')
-               return redirect('register') 
+               return redirect('signup') 
             else:
               user = User.objects.create_user(username=username,password=password,email=email,
               first_name=first_name) 
@@ -66,7 +66,7 @@ def register(request):
               return redirect('login')
    else:
     messages.error(request,'passwords do not match')
-    return redirect('register')   
+    return redirect('signup')   
   else:      
     return render(request,'TODO/register.html')
 
