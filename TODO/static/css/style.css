@@ -1,15 +1,368 @@
-p{
-    color:green;
-}
-
-li{
-    color: yellow;
-
-}
 body{
-    background-color: cyan;
+    background-color: white ;     
+    }
+h1 {
+   
+    font-style: unset;
+    font-size: 50px;
+    font-family: 'Rajdhani', sans-serif;
+    margin-top:10px;
+    padding: 5px;
+
+    
 }
-h1{
-    text-align: center;
+p {
+ text-align:center;
+ font-style: unset;
+}
+#title {
+   display:flex;
+   justify-content:center;
+
+}
+.container-page {
+   
+    background-color: white;
+    /* margin-top:20px; */
+    margin: 2% 15% 0 15%;
+}
+.container-1 {
+
+     display : flex;
+     
+ }
+ .box-1 {
+     flex :1;
+     /* flex-direction:column; */
+ }
+ .box-2 {
+     flex:1;
+     /* flex-direction: column; */
+
+ }
+ .box-1, .box-2 {
+     display: flex;
+     flex-direction: column;
+ }
+ /* .container-1 div {
+     border:1px #ccc solid;
+     padding:10px;
+     
+ } */
+
+.taskName {
+    border:none;
+}
+#description {
+    width:97%;
+    height:42px;
+    border-bottom: 1px #ccc solid;
+}
+ #desc {
+    float:left;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: initial;
+}
+
+/* .inputContainer half last {
+    float:left;
+    width:30%;
+   
+} */
+
+ #category, #date, #cat, #dueDate {
+    width: 94%;
+    height: 35px;
+    border-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    border-radius: 7px;
+
+} 
+.row {
     display: flex;
+    flex-direction: column;
+    align-content: center;
+ 
+}
+button {
+ font-family: 'Open Sans', sans-serif;
+ 
+ border-radius: 30px;
+ border: #16a085;
+ outline: none;
+ height: 45px;
+ font-size: 14px;
+ color: white;
+ cursor: pointer;
+ text-transform: uppercase;
+ position: relative;
+ -webkit-transition: all 0.3s;
+ transition: all 0.3s;
+ padding-left: 30px;
+ padding-right: 15px;
+ margin-top: 5px;
+}
+.center-align {
+ text-align: center;
+ font-style: font-family: 'Cookie', cursive;
+}
+
+.icon {
+ position: absolute;
+ top: 30%;
+ left: 10px;
+ font-size: 20px;
+}
+.taskAdd {
+ background: #444;
+ padding-left: 31px;
+ width: 150px;
+ margin-top: -10px;
+}
+.taskAdd:hover {
+ background: #303030;
+}
+.deleteall {
+    margin-top: -20px;
+}
+/* .deleteall:hover {
+ background: #c0392b;
+} */
+/* task styles */
+.taskList {
+ list-style: none;
+ padding: 0 20px;
+}
+.taskItem {
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 0;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: row;
+}
+.taskList .taskItem:nth-child(even) {
+ background: #fcfcfc;
+}
+.taskCheckbox {
+ margin-right: 1em;
+}
+.complete-true {
+ text-decoration:  line-through;
+ color: #bebebe;
+}
+.taskList .taskDate {
+    color: #95a5a6;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 10px;
+    color: black;
+    font-size: 15px;
+}
+.fa-calendar {
+    margin-right: 12px;
+    font-size: 15px;
+}
+[class*='category-'] {
+    display: inline-block;
+    font-size: 10px;
+    background: #444;
+    vertical-align: middle;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-top: -10px;
+}
+.category- {
+ background: transparent;
+}
+.category-Personal {
+ background: #2980b9;
+}
+.category-Work {
+ background: #8e44ad;
+}
+.category-School {
+ background: #f39c12;
+}
+.category-Cleaning {
+ background: #16a085;
+}
+.category-Other {
+ background: #d35400;
+}
+#button {
+ padding:10px;
+ border-radius:20px;
+ background: red;
+}
+
+.todo-div {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+.messages {
+    color: red;
+    text-align: center;
+}
+
+
+/* login */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+    margin-top: 5%;
+    width: 100%;
+
+  }
+  
+  .psw {
+    text-align: right;
+  }
+  /* .fas {
+    margin-right: 6px;
+    margin-top: -44px;
+    position: relative;
+    z-index: 2;
+    color: black;
+    float: left;
+  } */
+  input::placeholder {
+    margin-right: 20px;
+  }
+  .username {
+      color: red;
+  }
+  .border {
+      border: 1px solid red !important;
+      margin: 5% 32% 0 32%;
+      border-radius: 5px;
+      
+  }
+  .fa-trash {
+      font-size: 20px;
+  }
+  .fa-trash:hover {
+      color: red;
+  }
+
+
+  /* navbar */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: cornflowerblue;
+    color: red;
+    font-size: 22px;
+    padding-top: 10px;
+    height: 43px;
+}
+.todo-navbar {
+    margin-right: auto;
+    margin-left: 10px;
+}
+.nav-username {
+    margin-right: 50px;
+    color: white;
+    text-transform: capitalize;
+}
+.logout a {
+    color: white;
+    margin-right: 10px;
+}
+.logout a:hover {
+    color: green;
+    text-decoration: none;
+}
+@media (max-width: 700px) {
+    body {
+        background-color: white
+    }
+    .container {
+        padding: 16px;
+        
+        width: 100%;
+    
+      }
+      .border {
+        border: 1px solid grey !important;
+        margin-top: 40px;
+        border-radius: 5px;
+        margin: 6% 2% 2% 2%;
+    }
+      }
+      .login-head {
+        text-align: center;
+        color: red;
+        font-size: 30px;
+      }
+      h6 {
+        margin-top: -12px;
+        margin-left: 10px;
+        width: 220px;
+        background: white;
+        font-size: 1rem;
+        font-size: 22px;
+      }
+      .container-page {
+          margin: 0 5% 0 5%;
+      }
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: white;
+    }
+    .container-1 {
+        flex-direction: column;
+    }
+    .box-1, .box-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    
 }

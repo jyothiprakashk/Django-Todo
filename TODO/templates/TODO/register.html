@@ -1,0 +1,27 @@
+{% extends "TODO/main.html" %}
+
+{% block content %}
+<div class="login-head">toDo List</div>
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="border"><h6>Reg in to your account</h6>
+    <div class="container">
+      <label for="uname"><b>first name</b></label>
+      <input type="text" placeholder="Enter firstname" name="first_name" class="username" required><i class="fas fa-user-alt"></i>
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" class="username" required><i class="fas fa-user-tag"></i>
+      <label for="uname"><b>email</b></label>
+      <input type="text" placeholder="Enter email" name="email" class="username" required><i class="fas fa-envelope"></i>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required><i class="fas fa-lock"></i>
+
+      <button type="submit">Login</button>
+      {% include 'TODO/alert.html' %}
+      <div class="psw">If you are already user please?<a href="{% url 'login' %}">login</a></div>
+      
+    </div>
+  </div>
+</form>
+
+  {% endblock %}

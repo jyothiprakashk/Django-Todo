@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import datetime
+from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -17,6 +18,7 @@ class TodoList(models.Model):
     created = models.DateField(default=timezone.now().strftime("%Y-%m-%d"))
     due_date = models.DateField(default=timezone.now().strftime("%Y-%m-%d")) # a date
     category = models.ForeignKey(Category, default="general",on_delete=models.CASCADE,) # a foreignkey
+    admin=models.ForeignKey(User, on_delete=models.CASCADE)
     
     class Meta:
         ordering = ["-created"]
@@ -27,13 +29,6 @@ class TodoList(models.Model):
 
 
 
-class Contact(models.Model):
- 
-
-  contact_date = models.DateTimeField(default=datetime.now, blank=True)
-  user_id = models.IntegerField(blank=True)
-  def __str__(self):
-    return self.name
 
 
      

@@ -1,0 +1,26 @@
+
+
+<div class="nav-bar">
+    <div class="todo-navbar">toDo List</div>
+    <div class="nav-username">{{ user.first_name }}</div>
+
+
+    <div class="logout">
+        <a href="javascript:{document.getElementById('logout').submit()}"
+        class="nav-lin">
+        <i class="fas fa-sign-out-alt"></i>Logout
+        </a>
+        <form action="{% url 'logout' %}" method="POST" id="logout">
+            {% csrf_token %}
+            <input type="hidden">
+        </form>
+    
+    </div>
+</div>
+
+    
+
+
+
+
+
