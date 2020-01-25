@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 
-# @login_required(login_url="login/")
+@login_required(redirect_field_name="login")
 def index(request): 
     todos =TodoList.objects.filter(admin_id=request.user)
     categories= Category.objects.all()
@@ -29,10 +29,12 @@ def index(request):
      
     return render(request, "TODO/index.html",{"todos":todos,"categories":categories})   
 
+@login_required(redirect_field_name="login")
 def deleteall(request):
     TodoList.objects.filter().delete()
     return redirect('index')  
 
+@login_required(redirect_field_name="login")
 def delete(request,id):
     if request.method=='POST':
         TodoList.objects.filter(id=id).delete()
@@ -87,6 +89,7 @@ def login(request):
 
   else:      
     return render(request, 'TODO/login.html')
+@login_required(redirect_field_name="login")
 def logout(request):
     if request.method=='POST':
       auth.logout(request)

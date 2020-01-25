@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import mimetypes
 mimetypes.add_type("text/css", ".css", True)
-#import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -105,7 +105,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'register'
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -126,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Activate Django-Heroku.
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
